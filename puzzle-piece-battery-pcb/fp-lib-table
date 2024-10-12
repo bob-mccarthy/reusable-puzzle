@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Connector_SMD")(type "KiCad")(uri "/Users/bobbymccarthy/Documents/KiCad/8.0/footprints/Connector_SMD.pretty")(options "")(descr ""))
+)
