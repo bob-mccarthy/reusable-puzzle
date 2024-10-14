@@ -5,14 +5,15 @@ from PySide6.QtWidgets import QWidget
 from components.canvas import Canvas
 from components.buttons import QMenuButton
 from puzzle import Puzzle
-
+NUM_PIECES = 3
+RES = 4 #1 is full resolution and resolution of x is pixels / x
 class DrawingPage(QWidget):
     def __init__(self):
         super().__init__()
 
         
-        self.canvas = Canvas(50, 50, 10)
-        puzzle = Puzzle(3)
+        self.canvas = Canvas(128//RES*NUM_PIECES, 64//RES*NUM_PIECES, 10)
+        puzzle = Puzzle(3, RES)
 
         l = QtWidgets.QVBoxLayout()
         self.setLayout(l)
@@ -37,3 +38,4 @@ class DrawingPage(QWidget):
     def __copyAndPrint(self, puzzle):
         puzzle.loadBitmap(self.canvas.getBitMapCopy()) 
         puzzle.printPuzzlePieces()
+        puzzle.puzzlePiecesToBinary()

@@ -48,15 +48,18 @@ class Canvas(QtWidgets.QLabel):
 
 
     def mousePressEvent(self, e):
-        print(e.x(), e.y())
+
         self.__drawPixelAtPos(e.x(), e.y())
 
     def mouseMoveEvent(self, e):
-        print(e.x(), e.y())
+
         self.__drawPixelAtPos(e.x(), e.y())
 
     
     def clearCanvas(self):
+        for i in range(len(self.bitmap)):
+            for j in range(len(self.bitmap[0])):
+                self.bitmap[i][j] = False
         pixmap = QtGui.QPixmap(self.width, self.height)
         pixmap.fill(Qt.white)
         self.setPixmap(pixmap)

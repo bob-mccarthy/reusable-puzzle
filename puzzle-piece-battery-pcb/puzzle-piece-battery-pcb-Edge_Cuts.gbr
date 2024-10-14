@@ -1,0 +1,23 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.3*%
+%TF.CreationDate,2024-10-14T16:53:22-04:00*%
+%TF.ProjectId,puzzle-piece-battery-pcb,70757a7a-6c65-42d7-9069-6563652d6261,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Profile,NP*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 8.0.3) date 2024-10-14 16:53:22*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,Profile*%
+%ADD10C,0.050000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+X162500000Y-69500000D02*
+X189500000Y-69500000D01*
+X189500000Y-96500000D01*
+X162500000Y-96500000D01*
+X162500000Y-69500000D01*
+M02*
