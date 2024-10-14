@@ -1804,50 +1804,31 @@
 				)
 			)
 		)
-		(symbol "ZXM61P03FTA:ZXM61P03FTA"
-			(pin_names
-				(offset 0.254)
-			)
+		(symbol "fab:Transistor_MOSFET_PCh_SOT23"
+			(pin_numbers hide)
+			(pin_names hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "MOSFET"
-				(at 11.43 1.905 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "ZXM61P03FTA"
-				(at 11.43 -2.54 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "SOT23_ZETEX_DIO"
-				(at 0 0 0)
+			(property "Reference" "Q"
+				(at 3.81 1.27 0)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
-					(hide yes)
+					(justify left)
 				)
 			)
-			(property "Datasheet" "ZXM61P03FTA"
-				(at 0 0 0)
+			(property "Value" "Transistor_MOSFET_PCh_SOT23"
+				(at 3.81 -1.27 0)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
-					(hide yes)
+					(justify left)
 				)
 			)
-			(property "Description" ""
+			(property "Footprint" "fab:SOT-23-3"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1856,15 +1837,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "ZXM61P03FTA"
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS356AP-D.PDF"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1873,7 +1846,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SOT23_ZETEX_DIO SOT23_ZETEX_DIO-M SOT23_ZETEX_DIO-L"
+			(property "Description" "P-Channel mosfet NDS356AP in SOT-23 package"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1882,13 +1855,82 @@
 					(hide yes)
 				)
 			)
-			(symbol "ZXM61P03FTA_0_1"
+			(property "ki_keywords" "field effect transistor SQ2351ES-T1_BE3"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Transistor_MOSFET_PCh_SOT23_0_1"
 				(polyline
 					(pts
-						(xy 2.54 0) (xy 4.445 0)
+						(xy 0 2.54) (xy 1.27 2.54) (xy 1.27 -2.54) (xy 0 -2.54)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Transistor_MOSFET_PCh_SOT23_1_0"
+				(text "D"
+					(at 1.27 4.445 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "G"
+					(at -5.08 -1.27 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "S"
+					(at 1.27 -4.445 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "Transistor_MOSFET_PCh_SOT23_1_1"
+				(rectangle
+					(start -3.175 3.175)
+					(end 3.175 -3.175)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0.15)
 						(type default)
 					)
 					(fill
@@ -1897,10 +1939,10 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 -2.54) (xy 4.572 2.54)
+						(xy -1.905 -2.54) (xy 0 -2.54)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.15)
 						(type default)
 					)
 					(fill
@@ -1909,10 +1951,10 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 -2.54) (xy 5.08 -1.524)
+						(xy -1.905 2.54) (xy -1.905 -2.54)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.15)
 						(type default)
 					)
 					(fill
@@ -1921,10 +1963,10 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 -2.032) (xy 6.858 -2.032)
+						(xy 0 2.54) (xy -1.905 2.54)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.15)
 						(type default)
 					)
 					(fill
@@ -1933,10 +1975,10 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 -0.508) (xy 5.08 0.508)
+						(xy 0.635 -0.635) (xy 1.905 -0.635)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.15)
 						(type default)
 					)
 					(fill
@@ -1945,10 +1987,10 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 1.524) (xy 5.08 2.54)
+						(xy 0 -2.54) (xy 0 0) (xy -1.905 0)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.15)
 						(type default)
 					)
 					(fill
@@ -1957,115 +1999,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 6.858 2.032)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.35 0) (xy 6.858 0)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.858 -2.54) (xy 6.858 0)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.858 -2.54) (xy 8.382 -2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.858 2.032) (xy 6.858 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.858 2.54) (xy 8.382 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 -2.54) (xy 8.382 -0.762)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 8.382 0.508) (xy 8.382 2.54)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 9.144 0.508) (xy 7.62 0.508)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 6.35 0.508) (xy 5.08 0) (xy 6.35 -0.508)
+						(xy 0 0) (xy -0.635 -0.635) (xy -0.635 0.635) (xy 0 0)
 					)
 					(stroke
 						(width 0)
@@ -2077,7 +2011,7 @@
 				)
 				(polyline
 					(pts
-						(xy 9.144 -0.762) (xy 7.62 -0.762) (xy 8.382 0.508)
+						(xy 1.27 -0.635) (xy 0.635 0) (xy 1.905 0) (xy 1.27 -0.635)
 					)
 					(stroke
 						(width 0)
@@ -2087,52 +2021,8 @@
 						(type outline)
 					)
 				)
-				(circle
-					(center 6.35 0)
-					(radius 3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 6.858 -2.032)
-					(radius 0.0254)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 7.62 -2.54)
-					(radius 0.0254)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 7.62 2.54)
-					(radius 0.0254)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at 0 0 0)
+				(pin passive line
+					(at -5.08 -2.54 0)
 					(length 2.54)
 					(name "G"
 						(effects
@@ -2149,8 +2039,8 @@
 						)
 					)
 				)
-				(pin unspecified line
-					(at 7.62 -5.08 90)
+				(pin passive line
+					(at 0 -5.08 90)
 					(length 2.54)
 					(name "S"
 						(effects
@@ -2167,8 +2057,8 @@
 						)
 					)
 				)
-				(pin unspecified line
-					(at 7.62 5.08 270)
+				(pin passive line
+					(at 0 5.08 270)
 					(length 2.54)
 					(name "D"
 						(effects
@@ -2531,12 +2421,6 @@
 		(uuid "123f5c11-0f4e-4d82-9115-7654e0af5689")
 	)
 	(junction
-		(at 101.6 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "36791f50-92a0-4d2d-97f5-1d9ef537333c")
-	)
-	(junction
 		(at 124.46 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2555,16 +2439,22 @@
 		(uuid "764cd1ca-2ea9-4e4b-837b-1ef1f7aed2c7")
 	)
 	(junction
-		(at 101.6 82.55)
+		(at 83.82 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "97a3f3a2-78c7-421c-8f0e-3482565a469a")
+		(uuid "83835668-ce7c-45cf-b183-b5e844e67496")
 	)
 	(junction
 		(at 187.96 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d332771c-2d6d-47b0-a259-52fb9321b430")
+	)
+	(junction
+		(at 92.71 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "de675f43-834f-43a0-a81b-c659fa2c4fe1")
 	)
 	(junction
 		(at 167.64 124.46)
@@ -2595,16 +2485,6 @@
 			(type default)
 		)
 		(uuid "261833bc-917c-43ef-9647-9363d1a7cdf8")
-	)
-	(wire
-		(pts
-			(xy 101.6 66.04) (xy 101.6 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "27b5926b-d02f-4e75-908d-51b00fd5f816")
 	)
 	(wire
 		(pts
@@ -2648,6 +2528,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 82.55) (xy 92.71 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46671beb-7455-4655-92f0-ec12f2747289")
+	)
+	(wire
+		(pts
 			(xy 187.96 114.3) (xy 189.23 114.3)
 		)
 		(stroke
@@ -2688,16 +2578,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 66.04) (xy 101.6 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "636fd466-53ac-462c-8daf-bfb625da4e5a")
-	)
-	(wire
-		(pts
 			(xy 161.29 124.46) (xy 162.56 124.46)
 		)
 		(stroke
@@ -2705,16 +2585,6 @@
 			(type default)
 		)
 		(uuid "63a8e3e6-4efb-483a-8306-e9cb856fe695")
-	)
-	(wire
-		(pts
-			(xy 101.6 78.74) (xy 101.6 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7255fffb-0e98-4e78-8601-2dce07b07ae2")
 	)
 	(wire
 		(pts
@@ -2828,6 +2698,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 76.2) (xy 83.82 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "997b6bf3-8cc0-44c7-950c-8997e143bcca")
+	)
+	(wire
+		(pts
 			(xy 124.46 78.74) (xy 109.22 78.74)
 		)
 		(stroke
@@ -2858,7 +2738,17 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 82.55) (xy 101.6 82.55)
+			(xy 83.82 68.58) (xy 87.63 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1c5d19b-4c3a-40d8-9fe7-5eb437be4754")
+	)
+	(wire
+		(pts
+			(xy 92.71 82.55) (xy 109.22 82.55)
 		)
 		(stroke
 			(width 0)
@@ -2888,16 +2778,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 66.04) (xy 102.87 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e5622f8e-368b-40c8-831c-6c2749f0ef15")
-	)
-	(wire
-		(pts
 			(xy 161.29 114.3) (xy 187.96 114.3)
 		)
 		(stroke
@@ -2908,13 +2788,13 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 82.55) (xy 101.6 82.55)
+			(xy 80.01 68.58) (xy 83.82 68.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f5ec51f9-f32e-4e66-aacb-b9a5ffbf1c84")
+		(uuid "f6fd4af9-75e8-409c-9199-7aa148a9532b")
 	)
 	(global_label "STAT"
 		(shape input)
@@ -3272,7 +3152,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 102.87 66.04 270)
+		(at 80.01 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3281,7 +3161,7 @@
 		(fields_autoplaced yes)
 		(uuid "1246e6cc-e604-450e-81a7-ecafea5e3910")
 		(property "Reference" "#PWR05"
-			(at 99.06 66.04 0)
+			(at 83.82 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3290,16 +3170,15 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 106.68 66.0399 90)
+			(at 78.74 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 102.87 66.04 0)
+			(at 80.01 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3308,7 +3187,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.87 66.04 0)
+			(at 80.01 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3317,7 +3196,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 102.87 66.04 0)
+			(at 80.01 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4081,16 +3960,15 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 101.6 74.93 90)
+		(at 83.82 72.39 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "68276b38-603f-49c5-ad53-51061002692f")
 		(property "Reference" "D1"
-			(at 104.14 73.6599 90)
+			(at 86.36 71.1199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4099,7 +3977,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 104.14 76.1999 90)
+			(at 86.36 73.6599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4108,7 +3986,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
-			(at 101.6 74.93 0)
+			(at 83.82 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4117,7 +3995,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 101.6 74.93 0)
+			(at 83.82 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4126,7 +4004,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 101.6 74.93 0)
+			(at 83.82 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4135,7 +4013,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 101.6 74.93 0)
+			(at 83.82 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4144,7 +4022,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 101.6 74.93 0)
+			(at 83.82 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4371,6 +4249,79 @@
 			(project "puzzle-piece-battery-pcb"
 				(path "/ec51d40a-bf9e-4672-a46c-de32b19bd793"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "fab:Transistor_MOSFET_PCh_SOT23")
+		(at 92.71 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8941fca3-b442-4217-bfed-0cd734091e70")
+		(property "Reference" "Q1"
+			(at 96.52 64.7699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Transistor_MOSFET_PCh_SOT23"
+			(at 96.52 67.3099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "fab:SOT-23-3"
+			(at 92.71 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS356AP-D.PDF"
+			(at 92.71 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel mosfet NDS356AP in SOT-23 package"
+			(at 92.71 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "377f41e7-b812-4bef-b908-dd2e5110b709")
+		)
+		(pin "1"
+			(uuid "1c25f95f-0d3d-41b1-9fe8-834b2cd7ea0d")
+		)
+		(pin "2"
+			(uuid "56310dd1-1530-4307-8650-9afcdfb9d807")
+		)
+		(instances
+			(project ""
+				(path "/ec51d40a-bf9e-4672-a46c-de32b19bd793"
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -5273,81 +5224,6 @@
 			(project ""
 				(path "/ec51d40a-bf9e-4672-a46c-de32b19bd793"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ZXM61P03FTA:ZXM61P03FTA")
-		(at 100.33 66.04 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e5ea1033-4f71-4b73-9c5c-c980e8dfc1a5")
-		(property "Reference" "MOSFET1"
-			(at 89.154 66.04 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ZXM61P03FTA"
-			(at 88.9 64.7701 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "ZXM61P03FTA:SOT23_ZETEX_DIO"
-			(at 100.33 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "ZXM61P03FTA"
-			(at 100.33 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 100.33 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "69a8909c-d864-474b-a20e-15869d8f1527")
-		)
-		(pin "3"
-			(uuid "3a978f3a-3287-46fe-9863-b39f317597cd")
-		)
-		(pin "1"
-			(uuid "42a1d345-9be6-4ebe-be6e-d20fa24ebb91")
-		)
-		(instances
-			(project ""
-				(path "/ec51d40a-bf9e-4672-a46c-de32b19bd793"
-					(reference "MOSFET1")
 					(unit 1)
 				)
 			)
