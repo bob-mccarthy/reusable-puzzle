@@ -1,1 +1,4 @@
 env/
+**/fp-info-cache
+puzzle-piece-pcb/puzzle-piece-pcb-backups
+puzzle-piece-battery-pcb/puzzle-piece-battery-pcb-backups
