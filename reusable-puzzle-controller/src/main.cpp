@@ -27,15 +27,23 @@ void setup() {
 }
 
 void loop() {
-  Wire.beginTransmission(5);
-  Serial.println("Sent On");
-  Wire.write(0xFF);
-  Wire.endTransmission();
+  for (int i = 1; i <= 9; i++)
+  {
+    Wire.beginTransmission(i);
+    uint8_t error = Wire.endTransmission();
+    if (error != 0)
+    {
+      Serial.println("Puzzle Piece not found at address: " + (String) i);
+      continue;
+    }
+    Wire.requestFrom(i, 1);
+    while(Wire.available())
+    {
+      uint8_t position = Wire.read();
+      Serial.println(position);
+    }
+  }
   delay(1000);
-  Wire.beginTransmission(5);
-  Serial.println("Sent Off");
-  Wire.write(0x00);
-  Wire.endTransmission();
-  delay(1000);
+  
 }
 

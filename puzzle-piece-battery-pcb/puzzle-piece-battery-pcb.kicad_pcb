@@ -543,8 +543,8 @@
 		(uuid "10950515-c564-4a7a-b96a-575a40a42e96")
 	)
 	(gr_circle
-		(center 186.207 72.643)
-		(end 187.457 72.643)
+		(center 176 72.393)
+		(end 177.25 72.393)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -572,7 +572,7 @@
 			(xy 162.5 70) (xy 189.5 70)
 		)
 		(height -0.5)
-		(gr_text "1062.9921 mils"
+		(gr_text "27.0000 mm"
 			(at 176 67.7 0)
 			(layer "F.SilkS")
 			(uuid "28f5e028-78cf-43d2-9991-90bb6968e091")
@@ -605,7 +605,7 @@
 			(xy 162.5 69.5) (xy 162.5 96.5)
 		)
 		(height 0)
-		(gr_text "1062.9921 mils"
+		(gr_text "27.0000 mm"
 			(at 160.7 83 90)
 			(layer "F.SilkS")
 			(uuid "4fa0497a-67b7-4562-b41b-39976e298dc9")
