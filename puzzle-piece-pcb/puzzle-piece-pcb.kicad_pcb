@@ -1598,7 +1598,7 @@
 		(descr "surface-mounted straight socket strip, 1x05, 2.54mm pitch, single row, style 1 (pin 1 left) (https://cdn.harwin.com/pdfs/M20-786.pdf), script generated")
 		(tags "Surface mounted socket strip SMD 1x05 2.54mm single row style1 pin1 left")
 		(property "Reference" "J2"
-			(at 0 -7.95 360)
+			(at 0 -7.95 0)
 			(layer "F.SilkS")
 			(uuid "a40ab58e-512e-4a40-933f-a059fff1e77e")
 			(effects
@@ -1609,7 +1609,7 @@
 			)
 		)
 		(property "Value" "Input"
-			(at 0 7.95 360)
+			(at 0 7.95 0)
 			(layer "F.Fab")
 			(uuid "b4904839-75cf-4087-ab65-d607757be82c")
 			(effects
@@ -2366,16 +2366,48 @@
 			)
 		)
 	)
-	(gr_rect
-		(start 150.25 89.25)
-		(end 177.25 116.25)
+	(gr_circle
+		(center 152.75 113.75)
+		(end 152.75 114.75)
 		(stroke
-			(width 0.1)
+			(width 0.05)
 			(type default)
 		)
 		(fill none)
 		(layer "Edge.Cuts")
-		(uuid "40a84bfd-b2a9-48ea-9fd8-de1e3e7a8c57")
+		(uuid "01e5801d-5bd0-4137-910f-804a718625a8")
+	)
+	(gr_line
+		(start 151.158031 116.225057)
+		(end 151.16 116.25)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "097b2519-4738-401f-97aa-ecc310af1fd4")
+	)
+	(gr_circle
+		(center 174.75 91.75)
+		(end 175.75 91.75)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "Edge.Cuts")
+		(uuid "17f00333-50f2-486b-ab9a-b0312256ff02")
+	)
+	(gr_rect
+		(start 150.25 89.25)
+		(end 177.25 116.25)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "Edge.Cuts")
+		(uuid "5cd3b582-d9c6-438d-86b2-63cddb709c29")
 	)
 	(dimension
 		(type aligned)
@@ -2385,7 +2417,7 @@
 			(xy 150 89.25) (xy 150 116.25)
 		)
 		(height -0.25)
-		(gr_text "1062.9921 mils"
+		(gr_text "27.0000 mm"
 			(at 149.15 102.75 90)
 			(layer "F.SilkS")
 			(uuid "173f7630-5511-47e1-97d6-f4d740b81e79")
@@ -2418,7 +2450,7 @@
 			(xy 150.25 89.25) (xy 177.25 89.25)
 		)
 		(height 0)
-		(gr_text "1062.9921 mils"
+		(gr_text "27.0000 mm"
 			(at 163.75 88.15 0)
 			(layer "F.SilkS")
 			(uuid "fd50f0a7-c873-40e2-980a-8ae194abb490")
@@ -2892,14 +2924,6 @@
 		(uuid "ce02922f-8593-40f6-b6fc-11e2ed7a773e")
 	)
 	(segment
-		(start 176.46 96.29)
-		(end 176.46 100.21)
-		(width 0.4064)
-		(layer "F.Cu")
-		(net 14)
-		(uuid "06cd7a81-5406-4f7a-b2e5-86720a967500")
-	)
-	(segment
 		(start 176.46 100.21)
 		(end 176.5468 100.2968)
 		(width 0.4064)
@@ -2932,12 +2956,12 @@
 		(uuid "2f5fc6d9-a0f4-43d0-b4e4-d8bd4ddc6686")
 	)
 	(segment
-		(start 171.475 90.725)
-		(end 176.5 95.75)
+		(start 172.4 96.03)
+		(end 176.46 96.03)
 		(width 0.4064)
 		(layer "F.Cu")
 		(net 14)
-		(uuid "447c0653-c983-4836-8e15-c27a9db76804")
+		(uuid "35fd9eac-954a-4aa6-96a4-6906fcb1de10")
 	)
 	(segment
 		(start 176.5468 115.5468)
@@ -2948,12 +2972,12 @@
 		(uuid "48cb6e22-c2a9-4dda-a663-01bd600caf84")
 	)
 	(segment
-		(start 176.5 95.75)
-		(end 176.5 96.25)
+		(start 167.55 90.725)
+		(end 167.55 91.18)
 		(width 0.4064)
 		(layer "F.Cu")
 		(net 14)
-		(uuid "4b858dd2-f89d-45be-adb3-ecb330dee6b0")
+		(uuid "58a7993f-1045-47d1-b7a2-e15bd626c1d5")
 	)
 	(segment
 		(start 152.6 100.21)
@@ -2962,14 +2986,6 @@
 		(layer "F.Cu")
 		(net 14)
 		(uuid "99ebd76e-6b95-43bd-b160-3495ad39ce6d")
-	)
-	(segment
-		(start 176.5 96.25)
-		(end 176.46 96.29)
-		(width 0.4064)
-		(layer "F.Cu")
-		(net 14)
-		(uuid "9ae99f08-cc9f-4952-b740-9526208358cd")
 	)
 	(segment
 		(start 165.975 102.69)
@@ -2996,6 +3012,22 @@
 		(uuid "d41be792-6186-4b1f-b1a4-7cb0fbb52ef7")
 	)
 	(segment
+		(start 176.46 96.03)
+		(end 176.46 100.21)
+		(width 0.4064)
+		(layer "F.Cu")
+		(net 14)
+		(uuid "db05f127-2b89-4bfa-b217-4dce54936e74")
+	)
+	(segment
+		(start 167.55 91.18)
+		(end 172.4 96.03)
+		(width 0.4064)
+		(layer "F.Cu")
+		(net 14)
+		(uuid "dcbaf999-e4f6-4a65-85a5-d0c9328b6962")
+	)
+	(segment
 		(start 150.9532 106.7032)
 		(end 159.75 115.5)
 		(width 0.4064)
@@ -3010,14 +3042,6 @@
 		(layer "F.Cu")
 		(net 14)
 		(uuid "f185ca69-8704-46ad-8192-60d83b2f1a64")
-	)
-	(segment
-		(start 167.55 90.725)
-		(end 171.475 90.725)
-		(width 0.4064)
-		(layer "F.Cu")
-		(net 14)
-		(uuid "ff09982b-9f0d-4ba9-9184-f16259fb1574")
 	)
 	(segment
 		(start 159.75 115.5)
