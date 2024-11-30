@@ -69,6 +69,7 @@ class Canvas(QtWidgets.QLabel):
             for pixel in row:
                 print('#' if pixel else ' ' , end = '')
             print()
+            
     def getBitMapCopy(self):
         bitmapCopy = []
         for row in self.bitmap:

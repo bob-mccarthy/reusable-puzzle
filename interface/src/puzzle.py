@@ -3,9 +3,10 @@ class Puzzle:
     #   also each puzzle piece represents one OLED screen   
     #size: an integer that tells the number of puzzle rows/cols (it has to be a square puzzle) 
     #resolution 
-    def __init__(self, size,resolution):
+    def __init__(self, numCols, numRows,resolution):
         self.puzzlePieces = []
-        self.size = size
+        self.numCols = numCols
+        self.numRows = numRows
         self.resolution = resolution
     #loadBitmap: a function which loads the bitmap into the puzzlePieces list 
     # bitmap: the image in a 2D boolean list where true is black and false is white
@@ -15,13 +16,13 @@ class Puzzle:
         width = len(bitmap[0])
         print(height)
         print(width)
-        for i in range(self.size):
+        for i in range(self.numRows):
             row = []
-            for j in range(self.size):
-                print(f'height {int(height*(i/self.size)),int(height*((i+1)/self.size))}')
+            for j in range(self.numCols):
+                print(f'height {int(height*(i/self.numRows)),int(height*((i+1)/self.numRows))}')
                 # print(f'width parameters {width, j, self.size}')
-                print(f'width {int(width*(j/self.size)),int(width*((j+1)/self.size))}')
-                row.append([r[int(width*(j/self.size)):int(width*((j+1)/self.size))] for r in bitmap[int(height*(i/self.size)):int(height*((i+1)/self.size))]] )
+                print(f'width {int(width*(j/self.numCols)),int(width*((j+1)/self.numCols))}')
+                row.append([r[int(width*(j/self.numCols)):int(width*((j+1)/self.numCols))] for r in bitmap[int(height*(i/self.numRows)):int(height*((i+1)/self.numRows))]] )
             self.puzzlePieces.append(row)
 
     #converts the list of puzzle pieces into a list of lists of binary strings 
@@ -29,6 +30,7 @@ class Puzzle:
     def puzzlePiecesToBinary(self):
         print('in puzzle')
         newPieces = []
+        print(len(self.puzzlePieces), len(self.puzzlePieces[0]))
         for i in range(len(self.puzzlePieces)):
             for j in range(len(self.puzzlePieces[i])):
                 puzzleWidth = len(self.puzzlePieces[i][j][0]) 
@@ -36,22 +38,25 @@ class Puzzle:
                 newPiece = [[0 for y in range(puzzleWidth * self.resolution)] for x in range(puzzleHeight * self.resolution)]
                 for k in range(len(self.puzzlePieces[i][j])):
                     for l in range(len(self.puzzlePieces[i][j][k])):
-                        for m in range(k * 4, (k+1) * 4):
-                            for n in range(l * 4, (l + 1) * 4):
+                        for m in range(k * self.resolution, (k+1) * self.resolution):
+                            for n in range(l * self.resolution, (l + 1) * self.resolution):
                                 newPiece[m][n] = self.puzzlePieces[i][j][k][l]
                 newPieces.append(newPiece)
         puzzlePieceStrs = []
+        print(len(newPieces[i][0]), len(newPieces[i])// 8)
         for i in range(len(newPieces)):
             
                 binaryStrs = []
-                for l in reversed(range(len(newPieces[i][0]))):
-                    for k in reversed(range(len(newPieces[i])// 8)):
+                for k in reversed(range(len(newPieces[i])// 8)):
+                    for l in reversed(range(len(newPieces[i][0]))):
                         binaryStr = []
                         for m in range(8):
+                            # print(k*8 + m, l)
                             binaryStr.append('1' if newPieces[i][k*8 + m][l] else '0')
-                        print(binaryStr)
-                        binaryStrs.append(''.join(binaryStr))
+                        # print(binaryStr)
+                        binaryStrs.append('0b' + ''.join(binaryStr))
                 puzzlePieceStrs.append(binaryStrs)
+        print(len(puzzlePieceStrs[0]))
         return puzzlePieceStrs
         # for binaryStr in binaryStrs:
         #     print(binaryStr)
