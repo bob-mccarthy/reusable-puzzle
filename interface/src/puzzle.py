@@ -3,32 +3,36 @@ class Puzzle:
     #   also each puzzle piece represents one OLED screen   
     #size: an integer that tells the number of puzzle rows/cols (it has to be a square puzzle) 
     #resolution 
-    def __init__(self, numCols, numRows,resolution):
+    def __init__(self, numCols, numRows, xSpacing, ySpacing,resolution, puzzlePieceDim):
         self.puzzlePieces = []
         self.numCols = numCols
         self.numRows = numRows
+        self.xSpacing = xSpacing
+        self.ySpacing = ySpacing
         self.resolution = resolution
+        self.puzzlePieceDim = puzzlePieceDim
     #loadBitmap: a function which loads the bitmap into the puzzlePieces list 
     # bitmap: the image in a 2D boolean list where true is black and false is white
     def loadBitmap(self, bitmap):
         self.puzzlePieces = []
+        pH, pW = self.puzzlePieceDim
         height = len(bitmap)
-        width = len(bitmap[0])
-        print(height)
-        print(width)
+        # print(height)
+        # width = len(bitmap[0])
+        # print(pH)
+        # print(pW)
         for i in range(self.numRows):
-            row = []
+            puzzlePiece = []
             for j in range(self.numCols):
-                print(f'height {int(height*(i/self.numRows)),int(height*((i+1)/self.numRows))}')
+                print(f'height {pH*i + self.ySpacing * (i), pH*(i+1) + self.ySpacing * (i)}')
                 # print(f'width parameters {width, j, self.size}')
-                print(f'width {int(width*(j/self.numCols)),int(width*((j+1)/self.numCols))}')
-                row.append([r[int(width*(j/self.numCols)):int(width*((j+1)/self.numCols))] for r in bitmap[int(height*(i/self.numRows)):int(height*((i+1)/self.numRows))]] )
-            self.puzzlePieces.append(row)
+                print(f'width {int(pW*j + self.xSpacing * (j)), pW* (j+1) + self.xSpacing * (j)}')
+                puzzlePiece.append([r[int(pW*(j/self.numCols)):int(pW*((j+1)/self.numCols))] for r in bitmap[int(pH*(i/self.numRows)):int(pH*((i+1)/self.numRows))]] )
+            self.puzzlePieces.append(puzzlePiece)
 
     #converts the list of puzzle pieces into a list of lists of binary strings 
     #   each string is 8 bit and start from bottom right to top left (as 0,0 on the OLED screen is the bottom left 8 pixels)
     def puzzlePiecesToBinary(self):
-        print('in puzzle')
         newPieces = []
         print(len(self.puzzlePieces), len(self.puzzlePieces[0]))
         for i in range(len(self.puzzlePieces)):
@@ -60,8 +64,6 @@ class Puzzle:
         return puzzlePieceStrs
         # for binaryStr in binaryStrs:
         #     print(binaryStr)
-
-        
 
     def printPuzzlePieces(self):
         for i in range(len(self.puzzlePieces)):

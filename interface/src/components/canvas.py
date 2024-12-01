@@ -12,7 +12,8 @@ class Canvas(QtWidgets.QLabel):
         self.pixelSize = pixelSize
         self.width = pixelWidth * pixelSize
         self.height = pixelHeight * pixelSize
-        # print(width, height)
+
+        print(self.width, self.height)
         pixmap = QtGui.QPixmap(self.width, self.height)
         pixmap.fill(Qt.white)
         self.setPixmap(pixmap)
@@ -23,28 +24,58 @@ class Canvas(QtWidgets.QLabel):
         self.erasingColor = QtGui.QColor('#FFFFFF')
         self.drawingMode = True
 
+        self.spacingMask = None
+        self.showMask = False
+
     #set drawing mode (true if drawing, false if erasing)
     def setDrawingMode(self, currMode):
         self.drawingMode = currMode
 
-
-    def __drawPixelAtPos(self,x,y):
-        if x < 0 or x // self.pixelSize >= len(self.bitmap[0]) and \
-           y < 0 or y // self.pixelSize >= len(self.bitmap) and \
-           self.bitmap[y // self.pixelSize][x // self.pixelSize] == self.drawingMode :
-            return
+    def __drawPixelAtPosWithColor(self,x,y,color):
+        
+        # print(x,y)
         #Set the bitmap equal to true if we are drawing on that pixel and false if we are erasing
-        self.bitmap[y // self.pixelSize][x // self.pixelSize] = self.drawingMode 
+        
         canvas = self.pixmap()
         painter = QtGui.QPainter(canvas)
         p = painter.pen()
         p.setWidth(self.pixelSize)
-        p.setColor(self.drawingColor if self.drawingMode else self.erasingColor)
+        p.setColor(color)
         painter.setPen(p)
         point = QPoint(x//self.pixelSize * self.pixelSize + self.pixelSize//2, y//self.pixelSize * self.pixelSize + self.pixelSize//2)
         painter.drawPoint(point)
         painter.end()
         self.setPixmap(canvas)
+
+    def __drawPixelAtPos(self,x,y):
+        if x < 0 or x // self.pixelSize >= len(self.bitmap[0]) or \
+           y < 0 or y // self.pixelSize >= len(self.bitmap) or \
+           self.bitmap[y // self.pixelSize][x // self.pixelSize] == self.drawingMode :
+            return
+        self.bitmap[y // self.pixelSize][x // self.pixelSize] = self.drawingMode 
+        if self.spacingMask[y // self.pixelSize][x // self.pixelSize]:
+            self.__drawPixelAtPosWithColor(x,y, self.maskDarkColor if self.drawingMode else self.maskLightColor)
+        else:
+            self.__drawPixelAtPosWithColor(x,y, self.drawingColor if self.drawingMode else self.erasingColor)
+    
+
+    def updateSpacingMask(self):
+        lightColor = self.maskLightColor if self.showMask else self.erasingColor
+        darkColor = self.maskDarkColor if self.showMask else self.drawingColor
+        for i in range(len(self.spacingMask)):
+            for j in range(len(self.spacingMask[0])):
+                if self.spacingMask[i][j]:
+                    self.__drawPixelAtPosWithColor(j*self.pixelSize, i*self.pixelSize, darkColor if self.bitmap[i][j] else lightColor)
+
+    def setSpacingMask(self, spacingMask, lightColor, darkColor):
+        self.spacingMask = spacingMask
+        self.maskLightColor = QtGui.QColor(lightColor)
+        self.maskDarkColor =QtGui.QColor(darkColor)
+    
+    def toggleDisplayMask(self):
+        self.showMask = not self.showMask
+        self.updateSpacingMask()
+        
 
 
     def mousePressEvent(self, e):
@@ -69,7 +100,7 @@ class Canvas(QtWidgets.QLabel):
             for pixel in row:
                 print('#' if pixel else ' ' , end = '')
             print()
-            
+
     def getBitMapCopy(self):
         bitmapCopy = []
         for row in self.bitmap:
